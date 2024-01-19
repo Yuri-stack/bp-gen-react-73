@@ -10,7 +10,7 @@ import Home from './pages/Home/Home'
 
 function App() {
     return (
-        <AuthProvider>
+        <AuthProvider>  {/* Compartilha com a Aplicação todos os dados do Contexto */}
             <BrowserRouter>
                 <Navbar />
                 <div className='min-h-[80vh]'>
