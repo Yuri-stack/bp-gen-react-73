@@ -53,7 +53,8 @@ function FormularioTema() {
 
     // Função assincrona que vai cadastrar o tema ou edita um tema já cadastrado
     async function gerarNovoTema(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()  // através do parametro E que representa um os eventos do Formulario, impedimos que o Form recarregue a página ao tentar enviar os dados
+        e.preventDefault()  // Através do parametro E que representa um os eventos do Formulario, impedimos que o Form recarregue a página ao tentar enviar os dados
+        setIsLoading(true)  // Muda o estado para verdadeiro, indicando que existe uma requisição sendo processada no back
 
         if (id !== undefined) { // Se o ID é diferente de undefined, quer dizer que estamos fazendo uma atualização
 
@@ -98,6 +99,7 @@ function FormularioTema() {
             }
         }
 
+        setIsLoading(false) // Muda o estado para falso, indicando a requisição já terminou de ser processada
         retornar()
     }
 
