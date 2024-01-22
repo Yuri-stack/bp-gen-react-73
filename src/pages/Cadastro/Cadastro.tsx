@@ -60,7 +60,7 @@ function Cadastro() {
                 foto: ''
             */
 
-            // O lado esquerdo, representa qual input chamou essa função, a parte direita pega o valor digitado
+            // O lado esquerdo, representa qual input chamou essa função e qual atributo do Objeto Usuario que será acessado, a parte direita pega o valor digitado
             [e.target.name]: e.target.value
         })
 
