@@ -8,7 +8,7 @@ import CardTemas from '../cardTemas/CardTemas';
 
 function ListaTemas() {
 
-    // Variavel de Estado de Temas - Registra um Array que possuí Objetos da Model Tema. Usada para armazena os dados que foram digitados nos inputs do formulario
+    // Variavel de Estado de Temas - Registra um Array que possuí Objetos da Model Tema. Usada para armazena os dados que foram trazidos pela Service
     const [temas, setTemas] = useState<Tema[]>([]); // Indicamos que o temas é um Array de Objetos de Temas, e a iniciamos com um array vazio
 
     // Criamos uma constante que recebe o hook useNavigate, para podermos redirecionar o usuário

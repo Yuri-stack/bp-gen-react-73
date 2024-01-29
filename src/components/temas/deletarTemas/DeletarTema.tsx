@@ -19,9 +19,7 @@ function DeletarTema() {
     // useParams = Esse hook serve para pegarmos parametros que veem na url do FRONT
     const { id } = useParams<{ id: string }>()  // Aqui, pegamos da URL um parametro/variavel chamado ID. Veja a rota de editarTema no APP.tsx 
 
-    console.log(id)
-
-    // Pega as informações que queremos do nosso Contexto através do hook useContexo
+    // Pega as informações que queremos do nosso Contexto através do hook useContexto
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token;    // pega o Token do Objeto Usuario
 
@@ -45,7 +43,7 @@ function DeletarTema() {
     }
 
     // Função de Efeito Colateral - Sempre que a variavel token, tiver o seu valor alterado
-    // uma função é disparada, essa função verifica se o token é IDÊNTICO a "", se sim, isso indica que o usuário NÃO ESTÁ LOGADO.
+    // uma função  é disparada, essa função verifica se o token é IDÊNTICO a "", se sim, isso indica que o usuário NÃO ESTÁ LOGADO.
     // Com isso, o avisamos e enviamos para a tela de Login
     useEffect(() => {
         if (token === '') {
