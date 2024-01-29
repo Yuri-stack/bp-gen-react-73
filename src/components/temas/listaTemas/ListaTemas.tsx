@@ -22,6 +22,7 @@ function ListaTemas() {
     async function buscarTemas() {
 
         try {   // Tenta fazer a requisição, e se houver erro impede que a aplicação pare
+
             await buscar('/temas', setTemas, {   // Passamos os parametros para Service Buscar(), junto com o Token
                 headers: { Authorization: token },
             })
@@ -72,13 +73,14 @@ function ListaTemas() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                         {/* MAP = método responsável por iterar/varrer um array e realizar uma função para cada Item do Array) */}
-                        {temas.map((tema) => (  /* tema = representa cada item do array */
+                        {
+                            temas.map((tema) => (  /* tema = representa cada item do array */
 
-                            // Para cada item do Array, será gerado um CardTema para ele, passando as info. desse tema para dentro do Card
-                            <>
-                                <CardTemas key={tema.id} tema={tema} />
-                            </>
-                        ))}
+                                // Para cada item do Array, será gerado um CardTema para ele, passando as info. desse tema para dentro do Card
+                                <>
+                                    <CardTemas key={tema.id} tema={tema} />
+                                </>
+                            ))}
 
                     </div>
                 </div>

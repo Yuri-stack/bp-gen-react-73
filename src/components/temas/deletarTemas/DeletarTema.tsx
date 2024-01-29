@@ -19,6 +19,8 @@ function DeletarTema() {
     // useParams = Esse hook serve para pegarmos parametros que veem na url do FRONT
     const { id } = useParams<{ id: string }>()  // Aqui, pegamos da URL um parametro/variavel chamado ID. Veja a rota de editarTema no APP.tsx 
 
+    console.log(id)
+
     // Pega as informações que queremos do nosso Contexto através do hook useContexo
     const { usuario, handleLogout } = useContext(AuthContext)
     const token = usuario.token;    // pega o Token do Objeto Usuario
