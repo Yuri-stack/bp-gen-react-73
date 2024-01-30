@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
+import { ToastContainer } from 'react-toastify'
 
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
 
-import Login from './pages/Login/Login'
-import Cadastro from './pages/Cadastro/Cadastro'
 import Home from './pages/Home/Home'
+import Login from './pages/Login/Login'
+import Perfil from './pages/Perfil/Perfil'
+import Cadastro from './pages/Cadastro/Cadastro'
 import ListaTemas from './components/temas/listaTemas/ListaTemas'
 import FormularioTema from './components/temas/formularioTema/FormularioTema'
 import DeletarTema from './components/temas/deletarTemas/DeletarTema'
@@ -14,9 +16,12 @@ import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens
 import FormularioPostagem from './components/postagens/formularioPostagem/FormularioPostagem'
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem'
 
+import 'react-toastify/dist/ReactToastify.css'; // Habilita a Estilização para os Alertas do Toastify
+
 function App() {
     return (
         <AuthProvider>  {/* Compartilha com a Aplicação todos os dados do Contexto */}
+            <ToastContainer />  {/* Habilita os Alertas Personalizados na Aplicação */}
             <BrowserRouter>
                 <Navbar />
                 <div className='min-h-[80vh]'>  {/* Define o tamanho minimo das páginas */}
@@ -33,6 +38,7 @@ function App() {
                         <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
                         <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
                         <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+                        <Route path="/perfil" element={<Perfil />} />
                     </Routes>
                 </div>
                 <Footer />
